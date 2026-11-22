@@ -1,0 +1,108 @@
+:root {
+  --color-page: #f5f2ec;
+  --color-surface: #fffdf9;
+  --color-surface-raised: #ffffff;
+  --color-text: #292a22;
+  --color-muted: #77766d;
+  --color-accent: #a34e34;
+  --color-accent-dark: #853d29;
+  --color-accent-soft: #f3e6dd;
+  --color-border: #e8e1d7;
+  --card-border-width: 1px;
+  --color-success: #55735b;
+  --shadow-card: 0 10px 30px rgb(48 39 28 / 7%);
+  --shadow-card-hover: 0 18px 38px rgb(48 39 28 / 13%);
+  --radius-card: 20px;
+  --radius-control: 14px;
+  --content-width: 1180px;
+  --font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  min-width: 320px;
+  background: var(--color-page);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% -25%, rgb(255 255 255 / 92%), transparent 58%),
+    var(--color-page);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, input, select { font: inherit; }
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 34%, transparent);
+  outline-offset: 3px;
+}
+
+.app {
+  width: min(100%, var(--content-width));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 28px 64px;
+  background: var(--color-page);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.menu-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 18px;
+}
+
+.menu-search {
+  display: block;
+  width: min(100%, 620px);
+  min-width: 0;
+  min-height: 52px;
+  margin: 0;
+  padding: 0 18px 0 48px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background-color: var(--color-surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2377766d' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 17px center;
+  color: var(--color-text);
+  font-size: calc(14px * var(--menu-font-scale, 1));
+  box-shadow: 0 3px 12px rgb(48 39 28 / 3%);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.menu-search::placeholder { color: #99958c; }
+.menu-search:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 12%, transparent);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .app { padding: 18px 16px 40px; }
+  .menu-controls {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 9px;
+    margin: 22px 0 14px;
+  }
+  .menu-search { width: 100%; min-height: 48px; }
+}
+
+
+
