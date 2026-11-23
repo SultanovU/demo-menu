@@ -15,7 +15,7 @@
   padding: 42px 20px;
   border: 1px dashed var(--color-border);
   border-radius: var(--radius-card);
-  background: rgb(255 253 249 / 58%);
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
   color: var(--color-muted);
   text-align: center;
 }

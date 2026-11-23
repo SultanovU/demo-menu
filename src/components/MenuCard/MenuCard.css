@@ -17,12 +17,17 @@
   box-shadow: var(--shadow-card-hover);
 }
 
+.app[data-menu-style="minimal"] .menu-card { box-shadow: none; }
+.app[data-menu-style="luxury"] .menu-card { border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border)); }
+.app[data-menu-style="premium"] .menu-card { box-shadow: 0 12px 34px color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.app[data-menu-style="cozy"] .menu-card { box-shadow: 0 8px 24px color-mix(in srgb, var(--color-accent) 9%, transparent); }
+
 .menu-card__media {
   position: relative;
   width: 100%;
   height: var(--card-image-height, 190px);
   overflow: hidden;
-  background: linear-gradient(135deg, #e9e3d9, #f7f2e9);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 10%, var(--color-page)), var(--color-surface));
 }
 
 .menu-card__media--fallback::after {
@@ -30,7 +35,7 @@
   inset: 0;
   display: grid;
   place-items: center;
-  color: #938779;
+  color: var(--color-muted);
   content: attr(data-fallback);
   font-family: var(--font-family);
   font-size: 18px;
@@ -57,10 +62,10 @@
   min-height: 27px;
   align-items: center;
   padding: 0 10px;
-  border: 1px solid rgb(255 255 255 / 55%);
+  border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
   border-radius: 999px;
-  background: rgb(255 253 249 / 92%);
-  color: #45443c;
+  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  color: var(--color-text);
   font-size: 10px;
   font-weight: 750;
   letter-spacing: 0.035em;
@@ -72,7 +77,7 @@
 
 .menu-card__unavailable {
   right: 12px;
-  background: rgb(133 61 41 / 92%);
+  background: var(--color-accent-dark);
   color: #fff;
 }
 
@@ -107,7 +112,7 @@
   gap: 10px;
   margin-top: auto;
   padding-top: 13px;
-  border-top: 1px solid #f0ece5;
+  border-top: 1px solid var(--color-border);
 }
 
 .menu-card__price {
